@@ -39,7 +39,7 @@ In conclusion, **ANFIS shows promise for modelling systems with complex behaviou
 ## Reproducing Results
 
 1. Install dependencies
-2. Load data and Run preprocessing
+2. Load data and run preprocessing
 3. Train MLR model
 4. Train ANFIS model
 5. Compare metrics
