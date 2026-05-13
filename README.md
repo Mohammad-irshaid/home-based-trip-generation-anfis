@@ -8,6 +8,7 @@ The implementation follows the methodology described in our peer‑reviewed pape
 
 > **Irshaid, M., & Abu‑Eisheh, S.** (2023). *Application of Adaptive Neuro-Fuzzy Inference System in Modelling Home-Based Trip Generation*. Ain Shams Engineering Journal (Q1), 14(11), 102523. 
 [DOI: 10.1016/j.asej.2023.102523]
+> 
 > (Available in this repository as `Application of ANFIS in Modelling Home-Based Trip Generation.pdf`)
 
 ### Why ANFIS for trip generation?
