@@ -35,3 +35,11 @@ This study investigates the feasibility of using the **Adaptive Neuro‑Fuzzy In
 Results indicate that ANFIS performs well for modelling HBALL and HBO trips, which exhibit more complex behaviour with wider data ranges and higher average daily trip counts. Compared to MLR, ANFIS shows improved accuracy and closer predictions – for HBALL trips, ANFIS achieved an RMSE of 1.4880 while MLR resulted in 1.7112 (a reduction of 13.04%). However, for HBW and HBE trip purposes, where behaviour is less complicated, MLR appears sufficient. The R‑squared values obtained with MLR are high (e.g., 96.63% for HBE, 90.36% for HBW), and results between the two approaches are closely comparable.
 
 In conclusion, **ANFIS shows promise for modelling systems with complex behaviour**, while MLR remains a suitable option for less complicated scenarios. The study emphasises the importance of exploring different modelling techniques in transportation research to identify the most appropriate approach for specific cases.
+
+## Reproducing Results
+
+1. Install dependencies
+2. Load data and Run preprocessing
+3. Train MLR model
+4. Train ANFIS model
+5. Compare metrics
