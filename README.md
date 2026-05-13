@@ -22,12 +22,6 @@ Traditional **Multiple Linear Regression (MLR)** is widely used for its simplici
 - For the simpler models (HBW and HBE), both approaches performed similarly – MLR already achieved R² > 90%.
 - The optimal ANFIS architectures used **Gaussian membership functions**, a **hybrid learning algorithm** (least‑squares + backpropagation), and early stopping to avoid overfitting.
 
-### What this repository (paper) contains
-- Python implementation of the ANFIS models described in the paper.
-- Scripts to replicate the training, validation, and comparison with MLR.
-- The dataset (anonymised household travel survey from Salfit City).
-- Visualisation for membership functions, training convergence, and error analysis.
-
 This repository serves as a reproducible, open‑source reference for researchers and practitioners exploring hybrid AI in transport modelling.
 
 ---
