@@ -36,6 +36,19 @@ Results indicate that ANFIS performs well for modelling HBALL and HBO trips, whi
 
 In conclusion, **ANFIS shows promise for modelling systems with complex behaviour**, while MLR remains a suitable option for less complicated scenarios. The study emphasises the importance of exploring different modelling techniques in transportation research to identify the most appropriate approach for specific cases.
 
+## ANFIS Methodology
+The implemented ANFIS architecture is a **first‑order Sugeno fuzzy model** with the following layers:
+
+1. **Fuzzification** – Gaussian membership functions for each input.
+2. **Rule firing strength** – Product t‑norm.
+3. **Normalisation** – Normalised firing strengths.
+4. **Defuzzification** – Linear output functions (consequents).
+5. **Overall output** – Weighted sum of rule outputs.
+
+Training uses a **hybrid learning algorithm**:
+- **Forward pass:** Least‑squares estimate (LSE) for consequent parameters.
+- **Backward pass:** Gradient descent (backpropagation) for premise (membership) parameters.
+
 ## Reproducing Results
 
 1. Install dependencies
