@@ -1,4 +1,4 @@
-# 🚗 ANFIS-Based Home-Based Trip Generation Modeling
+# 🚗 Modeling Home-Based Trip Generation Modeling Using ANFIS
 
 ![Python](https://img.shields.io/badge/Python-3.10+-blue)
 ![License](https://img.shields.io/badge/License-MIT-green)
