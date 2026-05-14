@@ -8,7 +8,7 @@
 A research-oriented implementation of the Adaptive Neuro-Fuzzy Inference System (ANFIS) for modeling home-based trip generation - a core component of the four‑step travel demand forecasting process. This repository reproduces and extends the methodology presented in our peer‑reviewed paper: 
 
 > **Irshaid, M., & Abu‑Eisheh, S.** (2023). *Application of Adaptive Neuro-Fuzzy Inference System in Modelling Home-Based Trip Generation*. Ain Shams Engineering Journal (Q1), 14(11), 102523. 
-[DOI: 10.1016/j.asej.2023.102523]
+[https://doi.org/10.1016/j.asej.2023.102523](https://doi.org/10.1016/j.asej.2023.102523)
 
 ## Abstract
 
