@@ -18,10 +18,10 @@ In conclusion, **ANFIS shows promise for modelling systems with complex behaviou
 ---
 
 
-### Overview
+## Overview
 This repository presents the implementation of Multiple Linear Regression (MLR) and Adaptive Neuro-Fuzzy Inference System (ANFIS) models for estimating home-based trip generation in Salfit City, Palestine. The study evaluates the capability of ANFIS to model complex nonlinear travel behavior compared with conventional regression approaches commonly used in the four-step travel demand forecasting process.
 
-### Research Motivation
+## Research Motivation
 
 Trip generation is the first step in the traditional four-step transportation planning framework and plays a critical role in travel demand forecasting.
 
@@ -41,7 +41,7 @@ into a hybrid framework capable of learning complex nonlinear relationships whil
 
 This research investigates whether ANFIS can improve the modeling accuracy of home-based trip generation compared with traditional regression methods.
 
-### Methodology
+## Methodology
 
 The study follows the workflow below:
 
@@ -79,9 +79,9 @@ Training uses a **hybrid learning algorithm**:
 - **Backward pass:** Gradient descent (backpropagation) for premise (membership) parameters.
 
 
-### Modeling Approaches
+## Modeling Approaches
 
-#### Multiple Linear Regression (MLR)
+### Multiple Linear Regression (MLR)
 
 The regression models were developed using:
 - backward stepwise regression
@@ -89,7 +89,7 @@ The regression models were developed using:
 - statistical significance testing
 - multicollinearity diagnostics
 
-#### Adaptive Neuro-Fuzzy Inference System (ANFIS)
+### Adaptive Neuro-Fuzzy Inference System (ANFIS)
 
 The ANFIS models use:
 - Takagi–Sugeno fuzzy inference system
@@ -99,7 +99,7 @@ The ANFIS models use:
 
 The models were trained and validated using separate datasets to avoid overfitting.
 
-### Key findings from the paper
+## Key findings from the paper
 - **Four model types** were developed: total household trips (HBALL), work trips (HBW), education trips (HBE), and other trips (HBO).
 - **ANFIS outperformed MLR** for the more complex models (HBALL and HBO):
   - HBALL: RMSE reduced by **13.0%**, R² increased from 65.8% to **74.2%**.
@@ -108,7 +108,7 @@ The models were trained and validated using separate datasets to avoid overfitti
 - The optimal ANFIS architectures used **Gaussian membership functions**, a **hybrid learning algorithm** (least‑squares + backpropagation), and early stopping to avoid overfitting.
 
 
-### Repository Structure
+## Repository Structure
 
 ```text
 home-based-trip-generation-anfis/
@@ -155,7 +155,7 @@ home-based-trip-generation-anfis/
 
 ---
   
-### Reproducing Results
+## Reproducing Results
 
 1. Install dependencies
 2. Load data and run preprocessing
@@ -164,7 +164,7 @@ home-based-trip-generation-anfis/
 5. Compare metrics
 
 
-### Citation
+## Citation
 
 If you use this repository in your research, please cite:
 
@@ -182,7 +182,7 @@ If you use this repository in your research, please cite:
 
 ---
 
-### Future Work
+## Future Work
 
 Potential extensions of this research include:
 
@@ -197,7 +197,7 @@ Potential extensions of this research include:
 
 ---
 
-### License
+## License
 
 This project is licensed under the MIT License.
 
