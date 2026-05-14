@@ -1,30 +1,4 @@
-# 🚗 Modeling Home-Based Trip Generation using ANFIS
-
-## Overview
-
-This repository implements **Adaptive Neuro‑Fuzzy Inference System (ANFIS)** models for **home‑based trip generation** – a core component of the four‑step travel demand forecasting process. The work is based on a case study in **Salfit City, Palestine**, using a dataset of 256 households (and 53 additional households for validation). The socio‑economic variables used as inputs include household size, employment, education, vehicle ownership, income, and dwelling type (see Table 1 in the associated paper).
-
-The implementation follows the methodology described in our peer‑reviewed paper:  
-
-> **Irshaid, M., & Abu‑Eisheh, S.** (2023). *Application of Adaptive Neuro-Fuzzy Inference System in Modelling Home-Based Trip Generation*. Ain Shams Engineering Journal (Q1), 14(11), 102523. 
-[DOI: 10.1016/j.asej.2023.102523]
-> 
-> (Available in this repository as `Application of ANFIS in Modelling Home-Based Trip Generation.pdf`)
-
-### Why ANFIS for trip generation?
-Traditional **Multiple Linear Regression (MLR)** is widely used for its simplicity, but trip‑making behaviour involves non‑linearities, uncertainty, and interdependencies that MLR cannot fully capture. ANFIS combines the learning capability of neural networks with the interpretability of fuzzy logic, making it particularly suitable for modelling complex, ambiguous systems.
-
-### Key findings from the paper
-- **Four model types** were developed: total household trips (HBALL), work trips (HBW), education trips (HBE), and other trips (HBO).
-- **ANFIS outperformed MLR** for the more complex models (HBALL and HBO):
-  - HBALL: RMSE reduced by **13.0%**, R² increased from 65.8% to **74.2%**.
-  - HBO: RMSE reduced by **8.6%**, R² increased from 80.7% to **83.9%**.
-- For the simpler models (HBW and HBE), both approaches performed similarly – MLR already achieved R² > 90%.
-- The optimal ANFIS architectures used **Gaussian membership functions**, a **hybrid learning algorithm** (least‑squares + backpropagation), and early stopping to avoid overfitting.
-
-This repository serves as a reproducible, open‑source reference for researchers and practitioners exploring hybrid AI in transport modelling.
-
----
+# 🚗 Modeling Home-Based Trip Generation Using ANFIS
 
 ## Abstract
 
@@ -36,41 +10,16 @@ Results indicate that ANFIS performs well for modelling HBALL and HBO trips, whi
 
 In conclusion, **ANFIS shows promise for modelling systems with complex behaviour**, while MLR remains a suitable option for less complicated scenarios. The study emphasises the importance of exploring different modelling techniques in transportation research to identify the most appropriate approach for specific cases.
 
-## ANFIS Methodology
-The implemented ANFIS architecture is a **first‑order Sugeno fuzzy model** with the following layers:
-
-1. **Fuzzification** – Gaussian membership functions for each input.
-2. **Rule firing strength** – Product t‑norm.
-3. **Normalisation** – Normalised firing strengths.
-4. **Defuzzification** – Linear output functions (consequents).
-5. **Overall output** – Weighted sum of rule outputs.
-
-Training uses a **hybrid learning algorithm**:
-- **Forward pass:** Least‑squares estimate (LSE) for consequent parameters.
-- **Backward pass:** Gradient descent (backpropagation) for premise (membership) parameters.
-
-## Reproducing Results
-
-1. Install dependencies
-2. Load data and run preprocessing
-3. Train MLR model
-4. Train ANFIS model
-5. Compare metrics
-
-
-
-
-
-# Home-Based Trip Generation Using ANFIS
-
-A research-oriented implementation of the Adaptive Neuro-Fuzzy Inference System (ANFIS) for modeling home-based trip generation in transportation planning. This repository reproduces and extends the methodology presented in the published study:
-
-> *Irshaid, M., & Abu-Eisheh, S. (2023). Application of adaptive neuro-fuzzy inference system in modelling home-based trip generation. Ain Shams Engineering Journal, 14, 102523.*
-
 ---
 
-# Overview
+A research-oriented implementation of the Adaptive Neuro-Fuzzy Inference System (ANFIS) for modeling home-based trip generation - a core component of the four‑step travel demand forecasting process. This repository reproduces and extends the methodology presented in our peer‑reviewed paper: 
 
+> **Irshaid, M., & Abu‑Eisheh, S.** (2023). *Application of Adaptive Neuro-Fuzzy Inference System in Modelling Home-Based Trip Generation*. Ain Shams Engineering Journal (Q1), 14(11), 102523. 
+[DOI: 10.1016/j.asej.2023.102523]
+> 
+
+
+## Overview
 This repository presents the implementation of Multiple Linear Regression (MLR) and Adaptive Neuro-Fuzzy Inference System (ANFIS) models for estimating home-based trip generation in Salfit City, Palestine.
 
 The study evaluates the capability of ANFIS to model complex nonlinear travel behavior compared with conventional regression approaches commonly used in the four-step travel demand forecasting process.
@@ -82,17 +31,10 @@ Four trip generation models were developed:
 - **HBE** — Home-Based Education trips
 - **HBO** — Home-Based Other trips
 
-The repository contains:
-- data preprocessing workflows
-- model development scripts
-- ANFIS implementation
-- regression benchmarking
-- evaluation metrics
-- reproducibility resources
+### Why ANFIS for trip generation?
+Traditional **Multiple Linear Regression (MLR)** is widely used for its simplicity, but trip‑making behaviour involves non‑linearities, uncertainty, and interdependencies that MLR cannot fully capture. ANFIS combines the learning capability of neural networks with the interpretability of fuzzy logic, making it particularly suitable for modelling complex, ambiguous systems.
 
----
-
-# Research Motivation
+### Research Motivation
 
 Trip generation is the first step in the traditional four-step transportation planning framework and plays a critical role in travel demand forecasting.
 
@@ -112,9 +54,16 @@ into a hybrid framework capable of learning complex nonlinear relationships whil
 
 This research investigates whether ANFIS can improve the modeling accuracy of home-based trip generation compared with traditional regression methods.
 
----
+### Key findings from the paper
+- **Four model types** were developed: total household trips (HBALL), work trips (HBW), education trips (HBE), and other trips (HBO).
+- **ANFIS outperformed MLR** for the more complex models (HBALL and HBO):
+  - HBALL: RMSE reduced by **13.0%**, R² increased from 65.8% to **74.2%**.
+  - HBO: RMSE reduced by **8.6%**, R² increased from 80.7% to **83.9%**.
+- For the simpler models (HBW and HBE), both approaches performed similarly – MLR already achieved R² > 90%.
+- The optimal ANFIS architectures used **Gaussian membership functions**, a **hybrid learning algorithm** (least‑squares + backpropagation), and early stopping to avoid overfitting.
 
-# Methodology
+
+### Methodology
 
 The study follows the workflow below:
 
@@ -138,9 +87,23 @@ Performance Evaluation
 Model Comparison & Validation
 ```
 
-## Modeling Approaches
+### ANFIS Methodology
+The implemented ANFIS architecture is a **first‑order Sugeno fuzzy model** with the following layers:
 
-### Multiple Linear Regression (MLR)
+1. **Fuzzification** – Gaussian membership functions for each input.
+2. **Rule firing strength** – Product t‑norm.
+3. **Normalisation** – Normalised firing strengths.
+4. **Defuzzification** – Linear output functions (consequents).
+5. **Overall output** – Weighted sum of rule outputs.
+
+Training uses a **hybrid learning algorithm**:
+- **Forward pass:** Least‑squares estimate (LSE) for consequent parameters.
+- **Backward pass:** Gradient descent (backpropagation) for premise (membership) parameters.
+
+
+### Modeling Approaches
+
+#### Multiple Linear Regression (MLR)
 
 The regression models were developed using:
 - backward stepwise regression
@@ -148,7 +111,7 @@ The regression models were developed using:
 - statistical significance testing
 - multicollinearity diagnostics
 
-### Adaptive Neuro-Fuzzy Inference System (ANFIS)
+#### Adaptive Neuro-Fuzzy Inference System (ANFIS)
 
 The ANFIS models use:
 - Takagi–Sugeno fuzzy inference system
@@ -158,35 +121,9 @@ The ANFIS models use:
 
 The models were trained and validated using separate datasets to avoid overfitting.
 
----
+### Dataset
 
-# Models Developed
-
-| Model | Description |
-|---|---|
-| HBALL | Total daily household trips |
-| HBW | Home-Based Work trips |
-| HBE | Home-Based Education trips |
-| HBO | Home-Based Other trips |
-
-## Selected Input Variables
-
-The models utilize household socioeconomic characteristics including:
-
-- household size
-- number of employed persons
-- number of students
-- household income
-- licensed drivers
-- vehicle ownership
-- household type
-- age categories
-
----
-
-# Dataset
-
-## Study Area
+#### Study Area
 
 The dataset was collected from:
 
@@ -194,14 +131,14 @@ The dataset was collected from:
 
 using household travel surveys conducted through face-to-face interviews.
 
-## Sample Size
+#### Sample Size
 
 | Dataset | Households |
 |---|---|
 | Training & Calibration | 256 |
 | Validation & Testing | 53 |
 
-## Target Variables
+#### Target Variables
 
 | Variable | Description |
 |---|---|
@@ -210,47 +147,40 @@ using household travel surveys conducted through face-to-face interviews.
 | HBE | Education trips |
 | HBO | Other-purpose trips |
 
-## Data Characteristics
+#### Data Characteristics
 
 The dataset contains:
 - household socioeconomic attributes
 - trip production information
 - daily home-based travel behavior
 
----
-
-# Repository Structure
+## Repository Structure
 
 ```text
-home-based-trip-generation-anfis/
-│
-├── data/
-│   ├── raw/
-│   ├── processed/
-│
-├── notebooks/
-│   ├── HBALL_Model.ipynb
-│   ├── HBW_Model.ipynb
-│   ├── HBE_Model.ipynb
-│   ├── HBO_Model.ipynb
-│   └── Full_Analysis.ipynb
-│
-├── src/
-│   ├── preprocessing/
-│   ├── models/
-│   │   ├── anfis_model.py
-│   │   └── mlr_model.py
-│   ├── evaluation/
-│   └── visualization/
-│
-├── results/
-├── figures/
-├── requirements.txt
-├── README.md
-└── LICENSE
-```
 
 ---
+  
+### Reproducing Results
+
+1. Install dependencies
+2. Load data and run preprocessing
+3. Train MLR model
+4. Train ANFIS model
+5. Compare metrics
+
+
+
+
+
+# Home-Based Trip Generation Using ANFIS
+
+//
+//
+//
+//
+
+
+
 
 # Installation
 
