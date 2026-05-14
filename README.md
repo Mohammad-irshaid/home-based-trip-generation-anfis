@@ -70,8 +70,9 @@ Performance Evaluation
 Model Comparison & Validation
 ```
 
-**ANFIS Methodology**
+## ANFIS Methodology 
 The implemented ANFIS architecture is a **first‑order Sugeno fuzzy model** with the following layers:
+![ANFIS Architecture](figures/equivalent_anfis_architecture.png)
 
 1. **Fuzzification** – Gaussian membership functions for each input.
 2. **Rule firing strength** – Product t‑norm.
@@ -82,6 +83,7 @@ The implemented ANFIS architecture is a **first‑order Sugeno fuzzy model** wit
 Training uses a **hybrid learning algorithm**:
 - **Forward pass:** Least‑squares estimate (LSE) for consequent parameters.
 - **Backward pass:** Gradient descent (backpropagation) for premise (membership) parameters.
+![Workflow](figures/anfis_developing_training_flowchart.png)
 
 
 ## Modeling Approaches
