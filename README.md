@@ -131,13 +131,13 @@ Training uses a hybrid algorithm:
 | Model | Method | RMSE | R² |
 |------|--------|------|------|
 | HBALL | MLR   | 1.7112 | 65.85% |
-| HBALL | ANFIS | 1.4880 | 74.18% |
+|       | ANFIS | 1.4880 | 74.18% |
 | HBW   | MLR   | 0.5932 | 90.36% |
-| HBW   | ANFIS | 0.5465 | 92.74% |
+|       | ANFIS | 0.5465 | 92.74% |
 | HBE   | MLR   | 0.4035 | 96.63% |
-| HBE   | ANFIS | 0.4020 | 96.66% |
+|       | ANFIS | 0.4020 | 96.66% |
 | HBO   | MLR   | 1.5778 | 80.65% |
-| HBO   | ANFIS | 1.4419 | 83.94% |
+|       | ANFIS | 1.4419 | 83.94% |
 
 **Insights**
 
