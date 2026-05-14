@@ -1,4 +1,4 @@
-## Table 1. Models Explanatory and Dependent Variables Description
+## Models Explanatory and Dependent Variables Description
 
 | Variable | Description | Average | St. Deviation | Min-Max |
 |----------|-------------|---------|---------------|---------|
