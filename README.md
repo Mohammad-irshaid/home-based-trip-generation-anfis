@@ -168,6 +168,9 @@ home-based-trip-generation-anfis/
 4. Train ANFIS model
 5. Compare metrics
 
+## Dataset Availability
+
+The dataset used in this study is included in the repository for research and reproducibility purposes. Sensitive personal identifiers were removed to preserve participant privacy.
 
 ## Citation
 
