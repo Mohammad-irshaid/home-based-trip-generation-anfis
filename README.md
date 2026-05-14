@@ -1,3 +1,8 @@
+![Python](https://img.shields.io/badge/Python-3.10+-blue)
+![License](https://img.shields.io/badge/License-MIT-green)
+![Research](https://img.shields.io/badge/Type-Research_Project-orange)
+![Journal](https://img.shields.io/badge/Journal-Q1-success)
+
 # 🚗 Modeling Home-Based Trip Generation Using ANFIS
 
 A research-oriented implementation of the Adaptive Neuro-Fuzzy Inference System (ANFIS) for modeling home-based trip generation - a core component of the four‑step travel demand forecasting process. This repository reproduces and extends the methodology presented in our peer‑reviewed paper: 
