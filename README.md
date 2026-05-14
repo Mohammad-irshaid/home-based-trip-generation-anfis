@@ -158,7 +158,6 @@ home-based-trip-generation-anfis/
 └── requirements.txt
 ```
 
----
   
 ## Reproducing Results
 
