@@ -5,50 +5,56 @@
 
 # 🚗 Modeling Home-Based Trip Generation Using ANFIS
 
-A research-oriented implementation of the Adaptive Neuro-Fuzzy Inference System (ANFIS) for modeling home-based trip generation - a core component of the four‑step travel demand forecasting process. This repository reproduces and extends the methodology presented in our peer‑reviewed paper: 
+A research-oriented implementation of the Adaptive Neuro-Fuzzy Inference System (ANFIS) for modeling home-based trip generation - a core component of the four-step travel demand forecasting process.
 
-> **Irshaid, M., & Abu‑Eisheh, S.** (2023). *Application of Adaptive Neuro-Fuzzy Inference System in Modelling Home-Based Trip Generation*. Ain Shams Engineering Journal (Q1), 14(11), 102523. 
-[https://doi.org/10.1016/j.asej.2023.102523](https://doi.org/10.1016/j.asej.2023.102523)
+This repository reproduces and extends the methodology presented in our peer-reviewed paper:
 
-## Abstract
+> Irshaid, M., & Abu-Eisheh, S. (2023). **Application of Adaptive Neuro-Fuzzy Inference System in Modelling Home-Based Trip Generation**.  *Ain Shams Engineering Journal (Q1)*, 14(11), 102523.  
+> DOI: https://doi.org/10.1016/j.asej.2023.102523
 
-**Keywords:** Home‑based trip generation · Travel demand modelling · Multiple linear regression · Adaptive neuro‑fuzzy inference system
-
-This study investigates the feasibility of using the **Adaptive Neuro‑Fuzzy Inference System (ANFIS)** and **Multiple Linear Regression (MLR)** for modelling home‑based trip generation in Salfit City, Palestine. The research compares the performance of these two methods and provides insights into their efficiency for different trip purposes. The methodology involves developing separate trip generation models for various purposes, including total daily household trips (HBALL), home‑based work (HBW), home‑based education (HBE), and other home‑based trips (HBO). Objective evaluation metrics like **Root Mean Squared Error (RMSE)**, **Mean Absolute Error (MAE)**, and **R‑squared** are used to assess model effectiveness.
-
-Results indicate that ANFIS performs well for modelling HBALL and HBO trips, which exhibit more complex behaviour with wider data ranges and higher average daily trip counts. Compared to MLR, ANFIS shows improved accuracy and closer predictions – for HBALL trips, ANFIS achieved an RMSE of 1.4880 while MLR resulted in 1.7112 (a reduction of 13.04%). However, for HBW and HBE trip purposes, where behaviour is less complicated, MLR appears sufficient. The R‑squared values obtained with MLR are high (e.g., 96.63% for HBE, 90.36% for HBW), and results between the two approaches are closely comparable.
-
-In conclusion, **ANFIS shows promise for modelling systems with complex behaviour**, while MLR remains a suitable option for less complicated scenarios. The study emphasises the importance of exploring different modelling techniques in transportation research to identify the most appropriate approach for specific cases.
-
----
+This repository demonstrates the application of hybrid AI methods in transportation demand modeling and intelligent travel behavior analysis.
 
 
 ## Overview
-This repository presents the implementation of Multiple Linear Regression (MLR) and Adaptive Neuro-Fuzzy Inference System (ANFIS) models for estimating home-based trip generation in Salfit City, Palestine. The study evaluates the capability of ANFIS to model complex nonlinear travel behavior compared with conventional regression approaches commonly used in the four-step travel demand forecasting process.
 
-## Research Motivation
+**Keywords:** Home-based trip generation · Travel demand modelling · Multiple linear regression · Adaptive neuro-fuzzy inference system
 
-Trip generation is the first step in the traditional four-step transportation planning framework and plays a critical role in travel demand forecasting.
+This study investigates the feasibility of using the **Adaptive Neuro-Fuzzy Inference System (ANFIS)** and **Multiple Linear Regression (MLR)** for modelling home-based trip generation in Salfit City, Palestine.
 
-Conventional Multiple Linear Regression (MLR) models are widely used due to their simplicity and interpretability. However, travel behavior often involves:
-- nonlinear relationships
-- uncertainty
-- vague decision-making patterns
-- interdependent socioeconomic factors
+The research compares the performance of these two methods and develops separate models for:
 
-These characteristics can limit the predictive performance of traditional regression approaches.
+- HBALL - Total household trips  
+- HBW - Home-Based Work trips  
+- HBE - Home-Based Education trips  
+- HBO - Home-Based Other trips  
 
-ANFIS combines:
-- Artificial Neural Networks (ANN)
-- Fuzzy Inference Systems (FIS)
+Evaluation metrics include **RMSE, MAE, and R²**.
 
-into a hybrid framework capable of learning complex nonlinear relationships while handling uncertainty and imprecise data.
+Results show that ANFIS performs better for HBALL and HBO, while MLR performs similarly for HBW and HBE.
 
-This research investigates whether ANFIS can improve the modeling accuracy of home-based trip generation compared with traditional regression methods.
 
-## Methodology
+### Key Contributions
 
-The study follows the workflow below:
+- Reproduces a Q1 journal transportation study  
+- Implements interpretable AI models (MLR + ANFIS)  
+- Benchmarks nonlinear vs linear modeling approaches  
+- Provides reproducible workflow for trip generation  
+- Includes scripts, notebooks, and evaluation pipeline  
+
+
+### Research Motivation
+
+Trip generation is the first step in the four-step travel demand model.
+
+Traditional regression models assume linear relationships, while real-world travel behavior involves:
+
+- Nonlinear relationships  
+- Behavioral uncertainty  
+- Interdependent socioeconomic factors  
+
+ANFIS combines neural networks and fuzzy logic to capture such complexity.
+
+###  Methodology
 
 ```text
 Household Survey Data
@@ -59,61 +65,85 @@ Feature Selection
         ↓
 Train/Test Split
         ↓
-MLR Model Development
-ANFIS Model Development
+MLR Model
+ANFIS Model
         ↓
-Model Training & Optimization
+Training & Optimization
         ↓
-Performance Evaluation
-(RMSE, MAE, R²)
+Evaluation (RMSE, MAE, R²)
         ↓
-Model Comparison & Validation
+Comparison & Validation
 ```
 
-## ANFIS Methodology 
-The implemented ANFIS architecture is a **first‑order Sugeno fuzzy model** with the following layers:
+---
+
+### ANFIS Architecture
+
 ![ANFIS Architecture](figures/equivalent_anfis_architecture.png)
 
-1. **Fuzzification** – Gaussian membership functions for each input.
-2. **Rule firing strength** – Product t‑norm.
-3. **Normalisation** – Normalised firing strengths.
-4. **Defuzzification** – Linear output functions (consequents).
-5. **Overall output** – Weighted sum of rule outputs.
+ANFIS is a first-order Sugeno fuzzy system consisting of:
 
-Training uses a **hybrid learning algorithm**:
-- **Forward pass:** Least‑squares estimate (LSE) for consequent parameters.
-- **Backward pass:** Gradient descent (backpropagation) for premise (membership) parameters.
-![Workflow](figures/anfis_developing_training_flowchart.png)
+1. Fuzzification (Gaussian membership functions)  
+2. Rule firing strength (product t-norm)  
+3. Normalization  
+4. Defuzzification (linear consequents)  
+5. Weighted output aggregation  
 
+Training uses a hybrid algorithm:
+- Least Squares Estimation (forward pass)  
+- Gradient Descent (backward pass)  
 
-## Modeling Approaches
+### Training Workflow
 
-### Multiple Linear Regression (MLR)
+![Training Workflow](figures/anfis_developing_training_flowchart.png)
 
-The regression models were developed using:
-- backward stepwise regression
-- ordinary least squares estimation
-- statistical significance testing
-- multicollinearity diagnostics
+---
 
-### Adaptive Neuro-Fuzzy Inference System (ANFIS)
+### Modeling Approaches
 
-The ANFIS models use:
-- Takagi–Sugeno fuzzy inference system
-- Gaussian membership functions
-- hybrid learning algorithm
-- gradient descent + least squares optimization
+**Multiple Linear Regression (MLR)**
 
-The models were trained and validated using separate datasets to avoid overfitting.
+- Ordinary Least Squares (OLS)  
+- Stepwise regression  
+- Statistical significance testing  
+- Multicollinearity checks  
 
-## Key findings from the paper
-- **Four model types** were developed: total household trips (HBALL), work trips (HBW), education trips (HBE), and other trips (HBO).
-- **ANFIS outperformed MLR** for the more complex models (HBALL and HBO):
-  - HBALL: RMSE reduced by **13.0%**, R² increased from 65.8% to **74.2%**.
-  - HBO: RMSE reduced by **8.6%**, R² increased from 80.7% to **83.9%**.
-- For the simpler models (HBW and HBE), both approaches performed similarly – MLR already achieved R² > 90%.
-- The optimal ANFIS architectures used **Gaussian membership functions**, a **hybrid learning algorithm** (least‑squares + backpropagation), and early stopping to avoid overfitting.
+**Adaptive Neuro-Fuzzy Inference System (ANFIS)**
 
+- Takagi–Sugeno fuzzy system  
+- Gaussian membership functions  
+- Hybrid learning (LSE + backpropagation)  
+- Overfitting control via validation  
+
+### Experimental Settings
+
+- Training samples: 256 households  
+- Validation samples: 53 households  
+- Study area: Salfit City, Palestine  
+- Features: socioeconomic household variables  
+- Evaluation metrics: RMSE, MAE, R²  
+- Membership functions: Gaussian  
+
+### Key Findings
+
+**Performance Comparison**
+
+| Model | Method | RMSE | R² |
+|------|--------|------|------|
+| HBALL | MLR   | 1.7112 | 65.85% |
+| HBALL | ANFIS | 1.4880 | 74.18% |
+| HBW   | MLR   | 0.5932 | 90.36% |
+| HBW   | ANFIS | 0.5465 | 92.74% |
+| HBE   | MLR   | 0.4035 | 96.63% |
+| HBE   | ANFIS | 0.4020 | 96.66% |
+| HBO   | MLR   | 1.5778 | 80.65% |
+| HBO   | ANFIS | 1.4419 | 83.94% |
+
+**Insights**
+
+- ANFIS improves performance for complex travel behavior (HBALL, HBO)  
+- MLR remains strong for simpler patterns (HBW, HBE)  
+- Nonlinear modeling is most beneficial for heterogeneous trip types  
 
 ## Repository Structure
 
@@ -131,12 +161,12 @@ home-based-trip-generation-anfis/
 │   └── run_pipeline.py
 │
 ├── data/
-│   ├── features_target_description.md
-│   └── salfit_trip_data.csv
+│   ├── salfit_trip_data.csv
+│   └── features_target_description.md
 │
 ├── figures/
-│   ├── anfis_developing_training_flowchart.png
 │   ├── equivalent_anfis_architecture.png
+│   ├── anfis_developing_training_flowchart.png
 │   ├── equivalent_anfis_architecture_HBALL.png
 │   └── initial_final_input_mfs_HBALL.png
 │
@@ -147,35 +177,102 @@ home-based-trip-generation-anfis/
 │   └── HBO_Model.ipynb
 │
 ├── paper/
-│   └── Application of adaptive neuro-fuzzy inference system in modelling home-based trip generation.pdf
+│   └── ANFIS_trip_generation_paper.pdf
 │
 ├── results/
-│   ├── anfis_result.md
 │   ├── mlr_results.md
+│   ├── anfis_results.md
 │   ├── model_comparison.md
-│   └── models_validation.md
+│   └── validation_results.md
 │
+├── requirements.txt
 ├── LICENSE
-├── README.md
-└── requirements.txt
+└── README.md
 ```
 
-  
-## Reproducing Results
+---
 
-1. Install dependencies
-2. Load data and run preprocessing
-3. Train MLR model
-4. Train ANFIS model
-5. Compare metrics
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/Mohammad-irshaid/home-based-trip-generation-anfis.git
+cd home-based-trip-generation-anfis
+```
+
+### Create Environment
+
+```bash
+python -m venv venv
+```
+
+Activate:
+
+**Windows**
+```bash
+venv\Scripts\activate
+```
+
+**Linux/macOS**
+```bash
+source venv/bin/activate
+```
+
+### Install Dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+
+### Run Full Pipeline
+
+```bash
+python code/run_pipeline.py
+```
+
+### Train Models
+
+```bash
+python code/train_mlr.py
+python code/train_anfis.py
+```
+
+### Evaluate Models
+
+```bash
+python code/evaluate_models.py
+```
+
+---
 
 ## Dataset Availability
 
-The dataset used in this study is included in the repository for research and reproducibility purposes. Sensitive personal identifiers were removed to preserve participant privacy.
+The dataset is included for research and reproducibility purposes. Any sensitive identifiers were removed to ensure privacy.
+
+
+## Limitations
+
+- Single-city study (Salfit)  
+- Limited sample size  
+- No external validation dataset  
+- Static socioeconomic variables  
+
+
+## Future Work
+
+- comparison with deep learning approaches
+- integration with GIS-based accessibility measures
+- activity-based travel demand modeling
+- transferability analysis across cities
+- explainable AI techniques for transportation models
+- integration with mode choice models
 
 ## Citation
 
-If you use this repository in your research, please cite:
+If you use this work, please cite:
 
 ```bibtex
 @article{irshaid2023anfis,
@@ -184,27 +281,10 @@ If you use this repository in your research, please cite:
   journal={Ain Shams Engineering Journal},
   volume={14},
   pages={102523},
-  year={2023},
-  publisher={Elsevier}
+  year={2023}
 }
 ```
 
----
-
-## Future Work
-
-Potential extensions of this research include:
-
-- comparison with deep learning approaches
-- integration with GIS-based accessibility measures
-- activity-based travel demand modeling
-- transferability analysis across cities
-- explainable AI techniques for transportation models
-- SHAP-based feature importance analysis
-- integration with mode choice models
-- development of web-based prediction tools
-
----
 
 ## License
 
